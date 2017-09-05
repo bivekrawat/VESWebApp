@@ -1,0 +1,46 @@
+<div class="panel">
+  <div class="col-md-2">
+    <img src="../assets/sample.png" alt="">
+  </div>
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-xs-12">
+            <form id="loginForm" novalidate="novalidate" #userLoginForm="ngForm" name="userLogin">
+              <div class="form-group">
+                <label for="username" class="control-label">Username</label>
+                <input id="email" class="form-control" type="text" #email="ngModel" name="userName" [(ngModel)]="userName" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                <div class="alert alert-danger" [hidden]="email.valid || email.untouched">
+                  <div *ngIf="email.errors && email.errors.required">
+                    Email is required
+                  </div>
+                  <div *ngIf="email.errors && email.errors.pattern">
+                    Email is invalid
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password" class="control-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" #userPassWord="ngModel" [(ngModel)]="password"
+                  value="" required title="Please enter your password">
+                <div class="alert alert-danger" [hidden]="userPassWord.valid || userPassWord.untouched">
+                  <div *ngIf="userPassWord.errors && userPassWord.errors.required">
+                    Password is required
+                  </div>
+                </div>
+              </div>
+              <!-- <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div> -->
+              <!-- <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember" id="remember"> Remember login
+                                </label>
+                                <p class="help-block">(if this is a private computer)</p>
+                            </div> -->
+              <button type="button" class="btn btn-success btn-block" (click)="login(userLoginForm)">Login</button>
+              <!-- <a href="/forgot/" class="btn btn-default btn-block">Help to login</a> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

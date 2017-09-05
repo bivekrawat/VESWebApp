@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  loginURL : 'http://192.168.150.82:9015/api/oauth-authenticate'
 };
