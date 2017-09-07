@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NewResistrationComponent implements OnInit {
-  constructor() { }
+  private count: number = 1;
+  public items: Array<any>;
 
-  ngOnInit() { }
+  constructor() {
+    this.items = ["client", "Family", "Friend", "personal Staff"]
+  }
+
+  ngOnInit() {
+
+  }
 }

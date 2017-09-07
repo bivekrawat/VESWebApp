@@ -1,2 +1,24 @@
-New Resgistration Page
-<a href="" class="notif"><span class="num">2</span></a>
+<!--New Resgistration Page-->
+<!--<a href="" class="notif"><span class="num">2</span></a>-->
+<div class="container">
+    <h4>Is there some on visiting in next 30 days?</h4>
+    <ul class="nav nav-pills">
+        <li><a href="#1a" data-toggle="tab" class="btn btn-default">Yes</a>
+        </li>
+        <li><a href="#2a" data-toggle="tab" class="btn btn-default">No</a>
+        </li>
+    </ul>
+
+    <div class="tab-content clearfix">
+        <div class="tab-pane active"> </div>
+        <div class="tab-pane" id="1a">
+            <h4>call Angular componenet</h4>
+            <ul class="nav nav-pills">
+                <li><a href="#1a" data-toggle="tab" class="btn btn-default" *ngFor="let item of items; let i=index">{{item}}</a></li>
+            </ul>
+        </div>
+        <div class="tab-pane" id="2a">
+            <h5>Sorry you're only allowed to book visits before 30 days</h5>
+        </div>
+    </div>
+</div>
